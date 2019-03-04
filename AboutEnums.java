@@ -42,9 +42,10 @@ public class AboutEnums {
     @Koan
     public void enumsWithAttributes() {
         // value is private but we still can access it. Why?
+        //because enum constructors are always private or default and therefore cannot be public/protected
         // Try moving the enum outside the AboutEnum class... What do you expect?
         // What happens?
-        assertEquals(SkatSuits.Clubs.value > SkatSuits.Spades.value, __);
+        assertEquals(SkatSuits.Clubs.value > SkatSuits.Spades.value, true);
     }
 
     enum OpticalMedia {
@@ -63,7 +64,7 @@ public class AboutEnums {
 
     @Koan
     public void enumsWithMethods() {
-        assertEquals(OpticalMedia.CD.getCoolnessFactor(), __);
-        assertEquals(OpticalMedia.BluRay.getCoolnessFactor(), __);
+        assertEquals(OpticalMedia.CD.getCoolnessFactor(), -3500);
+        assertEquals(OpticalMedia.BluRay.getCoolnessFactor(), 490000);
     }
 }
